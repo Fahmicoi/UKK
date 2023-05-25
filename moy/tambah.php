@@ -15,12 +15,20 @@
                 <td><input type="text" name="nama_barang" size="50" required></td>
             </tr>
             <tr> 
-                <td>Harga Barang</td>
-                <td><input type="text" name="harga_barang" size="50" required></td>
+                <td>Jenis Barang</td>
+                <td><input type="text" name="jenis_barang" size="50" required></td>
             </tr>
             <tr> 
-                <td>Stok Barang</td>
-                <td><input type="text" name="stok_barang" size="50" required></td>
+                <td>Jumlah Barang</td>
+                <td><input type="text" name="jumlah_barang" size="50" required></td>
+            </tr>
+            <tr> 
+                <td>Kondisi Barang</td>
+                <td><input type="text" name="kondisi_barang" size="50" required></td>
+            </tr>
+            <tr> 
+                <td>Keterangan</td>
+                <td><input type="text" name="keterangan" size="50" required></td>
             </tr>
             <tr> 
                 <td></td>
@@ -34,14 +42,16 @@
     // Check If form submitted, insert form data into users table.
     if(isset($_POST['Submit'])) {
         $nama_barang = $_POST['nama_barang'];
-        $harga_barang = $_POST['harga_barang'];
-        $stok_barang = $_POST['stok_barang'];
+        $jenis_barang = $_POST['jenis_barang'];
+        $jumlah_barang = $_POST['jumlah_barang'];
+        $kondisi_barang = $_POST['kondisi_barang'];
+        $keterangan = $_POST['keterangan'];
 
         // include database connection file
         include "koneksi.php";
 
         // Insert user data into table
-  $tambah_barang = "insert into barang values('','$nama_barang','$harga_barang','$stok_barang')";
+    $tambah_barang = "insert into barang values('','$nama_barang','$jenis_barang','$jumlah_barang','$kondisi_barang','$keterangan')";
      $kerjakan=mysqli_query($konek, $tambah_barang);
      if($kerjakan)
      {
