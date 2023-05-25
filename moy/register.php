@@ -54,6 +54,10 @@
         <input type="password" id="password" name="password" required>
       </div>
       <div class="form-group">
+        <label for="nama_user">Nama:</label>
+        <input type="nama_user" id="nama_user" name="nama_user" required>
+      </div>
+      <div class="form-group">
         <input type="submit" value="Register">
       </div>
     </form>
@@ -73,14 +77,15 @@
       
       $username = $_POST['username'];
       $password = $_POST['password'];
+      $nama_user = $_POST['nama_user'];
   
       // Query untuk menyimpan data user ke dalam tabel
-      $query = "INSERT INTO user (username, password) VALUES ('$username', '$password')";
+      $query = "INSERT INTO user (username, password, nama_user) VALUES ('$username', '$password', '$nama_user')";
       
       if (mysqli_query($konek, $query)) {
           echo 'Registrasi berhasil!';
           echo "<script>
-                alert('UDah bisa kocak registernya!');
+                alert('Done ga bg? DONE!');
                 document.location.href = 'login.php';
                 </script>";
       } else {
