@@ -8,11 +8,13 @@ if(isset($_POST['update']))
     $id = $_POST['id'];
 
     $nama_barang=$_POST['nama_barang'];
-    $harga_barang=$_POST['harga_barang'];
-    $stok_barang=$_POST['stok_barang'];
+    $jenis_barang=$_POST['jenis_barang'];
+    $jumlah_barang=$_POST['jumlah_barang'];
+    $kondisi_barang=$_POST['kondisi_barang'];
+    $keterangan=$_POST['keterangan'];
 
     // update user data
-    $result = mysqli_query($konek, "UPDATE barang SET nama_barang='$nama_barang',harga_barang='$harga_barang',stok_barang='$stok_barang' WHERE id_barang=$id");
+    $result = mysqli_query($konek, "UPDATE barang SET nama_barang='$nama_barang',jenis_barang='$jenis_barang',jumlah_barang='$jumlah_barang',kondisi_barang='$kondisi_barang',keterangan='$keterangan' WHERE id_barang=$id");
 
     // Redirect to homepage to display updated user in list
     header("Location: index.php");
@@ -29,8 +31,10 @@ $result = mysqli_query($konek, "SELECT * FROM barang WHERE id_barang=$id");
 while($r = mysqli_fetch_array($result))
 {
     $nama_barang = $r['nama_barang'];
-    $harga_barang = $r['harga_barang'];
-    $stok_barang = $r['stok_barang'];
+    $jenis_barang = $r['jenis_barang'];
+    $jumlah_barang = $r['jumlah_barang'];
+    $kondisi_barang = $r['kondisi_barang'];
+    $keterangan = $r['keterangan'];
 }
 ?>
 
@@ -51,12 +55,20 @@ while($r = mysqli_fetch_array($result))
                 <td><input type="text" size="50" name="nama_barang" value="<?php echo $nama_barang;?>"></td>
             </tr>
             <tr> 
-                <td>Harga Barang</td>
-                <td><input type="text" size="50" name="harga_barang" value="<?php echo $harga_barang;?>"></td>
+                <td>Jenis Barang</td>
+                <td><input type="text" size="50" name="jenis_barang" value="<?php echo $jenis_barang;?>"></td>
             </tr>
             <tr> 
-                <td>Stok Barang</td>
-                <td><input type="text" size="50" name="stok_barang" value="<?php echo $stok_barang;?>"></td>
+                <td>Jumlah Barang</td>
+                <td><input type="text" size="50" name="jumlah_barang" value="<?php echo $jumlah_barang;?>"></td>
+            </tr>
+            <tr> 
+                <td>Kondisi Barang</td>
+                <td><input type="text" size="50" name="kondisi_barang" value="<?php echo $kondisi_barang;?>"></td>
+            </tr>
+            <tr> 
+                <td>Keterangan</td>
+                <td><input type="text" size="50" name="keterangan" value="<?php echo $keterangan;?>"></td>
             </tr>
             <tr>
                 <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
