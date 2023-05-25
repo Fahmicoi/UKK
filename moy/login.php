@@ -8,12 +8,12 @@
       background-color: #5F9EA0;
     }
     .login-container {
+      background-color: #7FFFD4;
       width: 300px;
       margin: 0 auto;
       padding: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      background-color: #7FFFD4;
     }
     .login-container h2 {
       text-align: center;
@@ -54,7 +54,14 @@
         <input type="password" id="password" name="password" required>
       </div>
       <div class="form-group">
+        <label for="nama_user">Nama:</label>
+        <input type="nama_user" id="password" name="nama_user" required>
+      </div>
+      <div class="form-group">
         <input type="submit" value="Login">
+      </div>
+      <div class="form-group">
+        <a href="register.php">Register</a>
       </div>
     </form>
   </div>
